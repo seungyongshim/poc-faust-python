@@ -12,6 +12,10 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
+    - name: running kafka
+      run: |
+        cd kafka
+        docker-compose up -d
     - name: Set up Python 3.9
       uses: actions/setup-python@v1
       with:
