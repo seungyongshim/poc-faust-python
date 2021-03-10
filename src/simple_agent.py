@@ -8,7 +8,8 @@ class Add(faust.Record):
     b: int
 
 
-app = faust.App("simple_rpc", reply_create_topic=True)
+app = faust.App("simple_rpc")
+
 
 topic = app.topic(
     "adding",
