@@ -17,6 +17,12 @@ topic = app.topic(
 )
 
 
+@app.agent(app.topic("topic"))
+async def mytask(events):
+    async for event in events:
+        print(app.monitor.events_s)
+
+
 @app.agent(topic)
 async def adding(stream: StreamT[Add]) -> AsyncIterable[int]:
     async for value in stream:
